@@ -37,7 +37,7 @@ public class Validation {
         return cnpj.equals(cnpj.substring(0, 12) + digitA.toString() + digitB.toString());
     }
     
-    public static String onlyNumbers(CharSequence s) {
+    private static String onlyNumbers(CharSequence s) {
         return s.toString().replaceAll("\\D+", "");
     }
 
