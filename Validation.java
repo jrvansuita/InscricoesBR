@@ -20,7 +20,7 @@ public class Validation {
     }
 
     public static boolean isValidCPF(String cpf) {
-        cpf = Utils.onlyNumbers((CharSequence)cpf);
+        cpf = onlyNumbers((CharSequence)cpf);
         if ((cpf == null) || (cpf.length() != 11)) return false;
 
         Integer digitA = computeDigit(cpf.substring(0, 9), weightCPF);
@@ -29,11 +29,16 @@ public class Validation {
     }
 
     public static boolean isValidCNPJ(String cnpj) {
-        cnpj = Utils.onlyNumbers((CharSequence) cnpj);
+        cnpj = onlyNumbers((CharSequence) cnpj);
         if ((cnpj == null) || (cnpj.length() != 14)) return false;
 
         Integer digitA = computeDigit(cnpj.substring(0, 12), weightCNPJ);
         Integer digitB = computeDigit(cnpj.substring(0, 12) + digitA, weightCNPJ);
         return cnpj.equals(cnpj.substring(0, 12) + digitA.toString() + digitB.toString());
     }
+    
+    public static String onlyNumbers(CharSequence s) {
+        return s.toString().replaceAll("\\D+", "");
+    }
+
 }
