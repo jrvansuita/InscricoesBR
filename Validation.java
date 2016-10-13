@@ -1,4 +1,4 @@
-package neat.starker.model.resources;
+package your.package.Utils;
 
 /**
  * Created by jrvansuita on 17/11/15.
@@ -19,7 +19,6 @@ public class Validation {
         return sum > 9 ? 0 : sum;
     }
 
-
     public static boolean isValidCPF(String cpf) {
         cpf = Utils.onlyNumbers((CharSequence)cpf);
         if ((cpf == null) || (cpf.length() != 11)) return false;
@@ -37,9 +36,4 @@ public class Validation {
         Integer digitB = computeDigit(cnpj.substring(0, 12) + digitA, weightCNPJ);
         return cnpj.equals(cnpj.substring(0, 12) + digitA.toString() + digitB.toString());
     }
-
-   /* public static boolean isValidEmail(String email) {
-        return Patterns.EMAIL_ADDRESS.matcher(email).matches();
-    }*/
-
 }
