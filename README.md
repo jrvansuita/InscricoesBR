@@ -2,7 +2,8 @@
 Este projeto foi escrito para ser usado em applicativos Android.
 
 # Propósito
-Essa classe ajuda você a fazer a formatação de CNPJ, CPF, CEP e Telefones.
+A classe Mask.java ajuda você a fazer a formatação de CNPJ, CPF, CEP e Telefones.
+A Classe Validation.java ajuda você a fazer a validação/calculo de CNPJ, CPF.
 
 # Uso
 
@@ -40,4 +41,14 @@ Copie a classe para o seu projeto.
 #### Limpando a formatação.
 
     String s = Mask.unmask(suaInformacaoFormatada);
+    
+    
+#### Validando.
+
+    //Validando o CNPJ informado, retorna boolean.  
+    Validation.isValidCNPJ(seuCNPJString);
+
+    //Validando o CPF informado, retorna boolean.
+    Validation.isValidCPF(seuCPFString);
+    
     
